@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Windows.Foundation.Metadata;
 using WiredBrainCoffee.CustomersApp.Base;
 
 namespace WiredBrainCoffee.CustomersApp.Model
 {
+    [CreateFromString(MethodName = "WiredBrainCoffee.CustomersApp.Model.CustomerConverter.CreateCustomerFromString")]
     public class Customer : Observable
     {
         private string _firstName;
@@ -24,6 +19,7 @@ namespace WiredBrainCoffee.CustomersApp.Model
                 OnPropertyChanged();
             }
         }
+
         public string LastName
         {
             get => _lastName;
@@ -33,6 +29,7 @@ namespace WiredBrainCoffee.CustomersApp.Model
                 OnPropertyChanged();
             }
         }
+
         public bool IsDeveloper
         {
             get => _isDeveloper;
